@@ -10,6 +10,7 @@
 * 前端MVC及其框架
 * AngularJS介绍及实践
 ![skills ](https://raw.githubusercontent.com/webkong/share-web-technology/master/skillsMap.png)
+
 ##step2：一些通过前端技术实现的特效
 <font size="4">
 * [http://tympanus.net/Development/InteractiveParticlesSlideshow/](http://tympanus.net/Development/InteractiveParticlesSlideshow/)
