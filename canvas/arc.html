@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="400"></canvas>
+    <a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp">canvas基础手册</a>
+</body>
+<script type="text/javascript">
+    window.onload = function(){
+        var can = document.getElementById('canvas');
+        var ctx = can.getContext('2d');
+
+        for(i = 1; i<=10;i++){
+            ctx.beginPath();
+            ctx.arc(i*40,40,16,0,0.2*i*Math.PI,false);
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        //
+        ctx.beginPath();
+        ctx.moveTo(100,100);
+        ctx.lineTo(300,150);
+        ctx.stroke();
+
+    }
+</script>
+</html>

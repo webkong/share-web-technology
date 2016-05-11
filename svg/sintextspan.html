@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000">
+
+	<defs>
+		<pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+			<path stroke="#F0F0F0" fill="none" d="M0,0 H20 V20"></path>
+		</pattern>
+	</defs>
+	<rect width="1200" height="1000" fill="url(#grid)"/>
+	<text id="sintext" x="100" y="100" style="font-size:14px;" transform="translate(0,150)"></text>
+	<path d="M100,0V200M0,100H200" stroke="red" transform="translate(0,150)"></path>
+
+</svg>
+<script type="text/javascript">
+	//y= sin(x)
+	//x= [20,20,20...]
+	//y =  sin(w*x+t)
+	sintext = document.getElementById('sintext');
+	var NS = 'http://www.w3.org/2000/svg';
+	var text ='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	var n = text.length;
+	var x = [];
+	var y = null;
+	var i = n;
+	var s = 100 ;
+	var w = 0.02;
+	var t = 0 ;
+
+	
+
+	while(i--) {
+		x.push(10);
+		var tspan = document.createElementNS(NS, 'tspan');
+		tspan.textContent = text[n - i - 1];
+		sintext.appendChild(tspan);
+		var h= Math.round(360 / 26 *i );
+		tspan.setAttribute('fill', 'hsl('+h+',100%,80%)');
+	}
+
+	function arrange(t){ 
+		y=[];
+		var ly =0,cy;
+		for(i =0 ; i<n; ++i){
+			cy = -s*Math.sin(w * i *30 +t);
+			y.push(cy - ly);
+			ly = cy;
+		}
+	}
+	function render(){
+		sintext.setAttribute('dx', x.join(' '));
+		sintext.setAttribute('dy', y.join(' '));
+	}
+	function frame(){
+		t += 0.01;
+		arrange(t);
+		render();
+		requestAnimationFrame(frame);
+	}
+	frame();
+	
+</script>
+</body>
+</html>

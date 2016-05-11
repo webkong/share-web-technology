@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8" />
+		<title>form</title>
+		<link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+	</head>
+	<body>
+		<div class="container" ng-controller="MyCtrl">
+			<form class="form-horazantal" novalidate="" name="formName">
+				<div class="form-group">
+					<label for="">名字：</label>
+					<input class="form-control" ng-model="user.name" name="userName" type="text" required="" />
+				</div>
+				<div ng-show="formName.userName.$dirty&&formName.userName.$invalid" class="alert alert-warning" role="alert">
+					请填写名字
+				</div>
+				<div class="form-group">
+					<label for="">Email:</label>
+					<input ng-model="user.email" class="form-control" name="userEmail" type="email" required="" />
+				</div>
+				
+				<div ng-show="formName.userEmail.$dirty && formName.userEmail.$invalid" class="alert alert-warning" role="alert">
+					<span ng-show="formName.userEmail.$error.required">请填写Email</span>
+					<span ng-show="formName.userEmail.$error.email">这不是一个有效的Email</span>
+				</div>
+				<div class="radio">
+				性别：
+					<label>
+						<input  value="男" ng-model="user.gender" type="radio" />
+						男
+					</label>
+					<label>
+						<input  value="女" ng-model="user.gender" type="radio" />
+						女
+					</label>
+				</div>
+				<div class="checkbox">
+					<label for="">
+						<input type="checkbox" ng-model="user.agree" name="userAgree" required="" />
+						我同意：xxxxxx条款
+					</label>
+					
+				</div>
+				
+				<div ng-show="!formName.userAgree || !user.agree" class="alert alert-warning" role="alert">请同意并签名~</div>
+				<div class="form-group">
+					<button ng-click="reset()" ng-disabled="isUnchanged(user)" class="btn btn-success">重置</button>
+					<button ng-click="update(user)" ng-disabled="formName.$invalid || isUnchanged(user)" class="btn btn-success">保存</button>
+				</div>
+				
+			</form>
+	<pre>form = {{user | json}}</pre>
+	<pre>saved = {{saved | json}}</pre>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
