@@ -9,7 +9,7 @@
   * 其他
 * 前端MVC及其框架
 * AngularJS介绍及实践
-
+![skills ](https://raw.githubusercontent.com/webkong/share-web-technology/master/skillsMap.png)
 ##step2：一些通过前端技术实现的特效
 <font size="4">
 * [http://tympanus.net/Development/InteractiveParticlesSlideshow/](http://tympanus.net/Development/InteractiveParticlesSlideshow/)
@@ -71,6 +71,19 @@ cxt.fillRect(0,0,150,75);
 * 支持事件处理器
 * 最适合带有大型渲染区域的应用程序（比如谷歌地图）
 * 复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）
+##前端框架
+* 前端库
+  * jQuery
+  * Dojo
+  * YUI3/2
+  * KISSY
+  * Bootstrap
+  * Semantic
+* 前端框架
+  * AngularJS
+  * React
+  * Vue
+  * Backbone
 
 ##前端自动化
 * [node](http://nodejs.cn/)
@@ -78,3 +91,4 @@ cxt.fillRect(0,0,150,75);
 * [bower](http://bower.io/)
 * [grunt](http://www.gruntjs.net/)
 * [yeomen](http://yeoman.io/)
+
