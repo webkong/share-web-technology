@@ -93,3 +93,5 @@ cxt.fillRect(0,0,150,75);
 * [grunt](http://www.gruntjs.net/)
 * [yeomen](http://yeoman.io/)
 
+##github pages
+搭建免费的个人博客
